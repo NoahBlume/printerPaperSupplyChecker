@@ -1,0 +1,1 @@
+The uploaded version of the code has the actual website addresses removed (you need to be connected to the department VPN to access them). It also has my password, username, spreadsheet name, chromedriver location, and json key changed to generic names.
