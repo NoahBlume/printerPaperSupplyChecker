@@ -17,7 +17,7 @@ printerDicts = [{'name': 'charliebrown', 'address': 'printeraddress.com', '8x11'
 {'name': 'snoopy', 'address': 'printeraddress.com', '8x11': 0, '8x14': 0, '11x17': 0, 'toner': False, 'size': 'big'},
 {'name': 'woodstock', 'address': 'printeraddress.com', '8x11': 0, '8x14': 0, '11x17': 0, 'toner': False, 'size': 'big'},
 {'name': 'sally', 'address': 'printeraddress.com', '8x11': 0, '8x14': 0, '11x17': 0, 'toner': False, 'size': 'small'},
-{'name': 'spike', 'address': 'printeraddress.com', '8x11': 0, '8x14': 0, '11x17': 0, 'toner': False, 'size': 'big'},
+{'name': 'spike', 'address': 'printeraddress.com', '8x11': 0, '8x14': 0, '11x17': 0, 'toner': False, 'size': 'small'},
 {'name': 'olaf', 'address': 'printeraddress.com', '8x11': 0, '8x14': 0, '11x17': 0, 'toner': False, 'size': 'big'},
 {'name': 'pigpen', 'address': 'printeraddress.com', '8x11': 0, '8x14': 0, '11x17': 0, 'toner': False, 'size': 'small'},
 {'name': 'schroeder', 'address': 'printeraddress.com', '8x11': 0, '8x14': 0, '11x17': 0, 'toner': False, 'size': 'big'},
