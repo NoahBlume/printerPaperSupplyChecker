@@ -45,15 +45,16 @@ def printerCheck(size):
 	search_box.send_keys('Your Password')
 	search_box.submit()
 
-	#gets a list of all of the table rows; these contain the paper levels
+	#gets a list of all of the table rows; some of these will contain the paper levels
 	trs = driver.find_elements(By.TAG_NAME, "tr")
 	for aRow in trs:
 		#checks levels of 11x17 paper
 		if ("11x17" in aRow.text):
 			#on the site, paper level is indicated by an image that indicates either full, 2/3 full, 1/3 full, or empty
+			#this tries to find one of the images that indicates the paper is 1/3 full or empty
 			oneThird = aRow.find_elements_by_xpath(".//img[@title='1-33 % ']")
 			empty = aRow.find_elements_by_xpath(".//img[@title='None ']")
-			#if 11x17 paper is needed, adds it to the amount in the printers dictionary
+			#if 11x17 paper is needed, adds it to the amount in the printer's dictionary
 			if len(oneThird) == 1:
 				print('found an 11x17 1')
 				printer['11x17'] += 1
@@ -62,10 +63,11 @@ def printerCheck(size):
 				printer['11x17'] += 1
 		#checks levels of 8x11 paper
 		elif ("LTR" in aRow.text) or ("LTRR" in aRow.text):
+			#this tries to find one of the images that indicates the paper is 2/3 full, 1/3 full, or empty
 			twoThirds = aRow.find_elements_by_xpath(".//img[@title='33-66 % ']")
 			oneThird = aRow.find_elements_by_xpath(".//img[@title='1-33 % ']")
 			empty = aRow.find_elements_by_xpath(".//img[@title='None ']")
-			#if 8x11 paper is needed, adds it to the amount in the printers dictionary
+			#if 8x11 paper is needed, adds it to the amount in the printer's dictionary
 			#checks if the printer has big drawers (these hold more paper and need different values added)
 			#only drawers of number 1 and 2 can have big drawers (all the other drawers are small)
 			if (size == 'big') and (("Drawer 1" in aRow.text) or ("Drawer 2" in aRow.text)):
@@ -83,9 +85,10 @@ def printerCheck(size):
 					printer['8x11'] += 1
 		#checks levels of 8x14 paper
 		elif ("LGL" in aRow.text):
+			#this tries to find one of the images that indicates the paper is 1/3 full or empty
 			oneThird = aRow.find_elements_by_xpath(".//img[@title='1-33 % ']")
 			empty = aRow.find_elements_by_xpath(".//img[@title='None ']")
-			#if 8x14 paper is needed, adds it to the amount in the printers dictionary
+			#if 8x14 paper is needed, adds it to the amount in the printer's dictionary
 			if len(oneThird) == 1:
 				printer['8x14'] += 1
 			elif len(empty) == 1:
