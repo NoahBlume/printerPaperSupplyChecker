@@ -4,6 +4,7 @@ import os
 import base64
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
+from datetime import datetime
 
 #gets the google sheet that is to be edited
 scope = ['https://spreadsheets.google.com/feeds']
@@ -128,3 +129,7 @@ print("Totals:")
 print("8x11 Needed: " + str(totals[0]))
 print("8x14 Needed: " + str(totals[1]))
 print("11x17 Needed: " + str(totals[2]))
+
+#updates the spreadsheet to show the last time the supply levels were updated
+lastUpdated = datetime.now().strftime("%m-%d-%Y %H:%M")
+wks.update_acell('B14', lastUpdated)
